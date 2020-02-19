@@ -3,7 +3,9 @@ FROM alpine:3.11
 RUN apk add --no-cache \
 		ca-certificates \
 # DOCKER_HOST=ssh://... -- https://github.com/docker/cli/pull/1014
-		openssh-client
+		openssh-client \
+		curl \
+		jq
 
 # set up nsswitch.conf for Go's "netgo" implementation (which Docker explicitly uses)
 # - https://github.com/docker/docker-ce/blob/v17.09.0-ce/components/engine/hack/make.sh#L149
